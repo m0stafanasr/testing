@@ -1,6 +1,11 @@
-<div class="row">
-    <app-first [description]="desc"></app-first>
-    <app-first [description]='sec_desc'></app-first>
-    <app-first></app-first>
-    <button routerLink="/second" routerLinkActive="active">second</button>
+<div class="container-fluid">
+
+    <div class="row">
+        <app-first [description]="desc"></app-first>
+        <app-first [description]='sec_desc'></app-first>
+        <app-first></app-first>
+        <div class="row">
+            <button class=" mx-2 rounded rounded-3 bg-primary col-1 d-flex justify-content-center" routerLink="/second" routerLinkActive="active">second screen</button>
+        </div>
+    </div>
 </div>

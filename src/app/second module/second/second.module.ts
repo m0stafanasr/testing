@@ -7,11 +7,13 @@ import { ComponentTwoComponent } from 'src/app/componentTwo/component-two/compon
 import { ComponentThreeComponent } from 'src/app/componentThree/component-three/component-three.component';
 
 const route:Routes=[
-  {path:'name', redirectTo:'/name/second'},
-  {path:'second', component:SecondComponent},
+  {path:'', component:SecondComponent, children:[
     {path:'firstComp', component: ComponentOneComponent, outlet:'tabs'},
     {path:'secondComp', component: ComponentTwoComponent, outlet:'tabs'},
     {path:'thirdComp', component: ComponentThreeComponent, outlet:'tabs'}
+  ]},
+
+  {path:'**', redirectTo:'/name'},
 ]
 
 @NgModule({
