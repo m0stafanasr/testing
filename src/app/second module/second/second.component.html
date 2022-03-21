@@ -1,0 +1,11 @@
+<p>second works!</p>
+<div class="row">
+    <div class="col-3">
+        <button [routerLink]="['firstComp', {outlet:'tabs'}]">1</button>
+        <button routerLink="secondComp">2</button>
+        <button routerLink="thirdComp">3</button>
+    </div>
+    <div class="col-7 border">
+        <router-outlet name="tabs"></router-outlet>
+    </div>
+</div>
