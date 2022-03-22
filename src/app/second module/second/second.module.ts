@@ -7,6 +7,7 @@ import { ComponentTwoComponent } from 'src/app/componentTwo/component-two/compon
 import { ComponentThreeComponent } from 'src/app/componentThree/component-three/component-three.component';
 import { MainVComponent } from 'src/app/main-v/main-v.component';
 import { PopupComponent } from 'src/app/popup/popup.component';
+import {BsModalService } from 'ngx-bootstrap/modal';
 const route:Routes=[
   {path:'', component:SecondComponent, children:[
     {path:'firstComp', component: ComponentOneComponent, outlet:'tabs'},
@@ -27,7 +28,10 @@ const route:Routes=[
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(route)
+    RouterModule.forChild(route),
+
+  ], providers:[
+    BsModalService
   ]
 })
 export class SecondModule { }

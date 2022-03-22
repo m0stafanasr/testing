@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Data } from 'src/app/data';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-component-one',
   templateUrl: './component-one.component.html',
@@ -8,7 +9,8 @@ import { Data } from 'src/app/data';
 export class ComponentOneComponent implements OnInit {
   content:Data[]
   title:string=""
-  constructor() { this.content=[
+  modalRef:BsModalRef
+  constructor(private modalServ: BsModalService) { this.content=[
         {
             "id": 805,
             "level": 3,
@@ -32,6 +34,7 @@ export class ComponentOneComponent implements OnInit {
   new(){
     console.log("adding new Account")
     let pop:any = <any> document.getElementById('addingmodal')
-    pop.showModal()
+    this.modalRef = this.modalServ.show(pop)
   }
+
 }
