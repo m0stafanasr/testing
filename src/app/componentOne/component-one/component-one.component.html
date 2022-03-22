@@ -1,12 +1,12 @@
 <div class="container-fluid">
-<div class="row my-3">
-    <div class="col-8">
-        <h3>Info:</h3> this is side-items needed
-    </div>
-</div>
 <div class="row">
     <div class="col-12">
-        through this tab you will know more about the info needed for the side item
+        <app-main-v [content]="content" [title]="title" class="">
+           <div class="col-12 d-flex justify-content-end">
+               <button (click)="new()" data-bs-toggle="modal" data-bs-target="#addingmodal">Add New</button>
+           </div> 
+           <app-popup></app-popup>
+        </app-main-v>  
     </div>
 </div>
 </div>

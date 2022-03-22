@@ -1,0 +1,49 @@
+<div class="conteiner-fluid">
+    <div class="row">
+        <div class="col-5">
+            <h3>{{title}}</h3>
+        </div>
+    </div>
+    <ng-content></ng-content>
+    <table class="table col-12">
+        <thead>
+        <tr>
+            <td>
+                #
+            </td>
+            <td>
+                Name
+            </td>
+            <td>
+                Level
+            </td>
+            <td>
+                Eng name
+            </td>
+        </tr>
+    </thead>
+        <tbody *ngFor="let data of content">
+            <td class="">
+                {{data?.id}}
+            </td>
+            <td class="">
+                {{data?.name}}
+            </td>
+            <td class="">
+                {{data?.level}}
+            </td>
+            <td class="">
+                {{data?.translations?.en?.name}}
+            </td>
+        </tbody>
+    </table>
+    <div>
+
+            <div class="row">
+                <div class="col-3">
+                    
+                </div>
+            </div>
+            
+        </div>
+</div>

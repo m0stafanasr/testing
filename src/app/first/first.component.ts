@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FirstComponent implements OnInit {
   @Input() description?:{state: string, description?: string}
-
+  
   constructor() { }
 
   ngOnInit(): void {

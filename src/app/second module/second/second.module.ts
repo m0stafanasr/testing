@@ -5,7 +5,8 @@ import { SecondComponent } from './second.component';
 import { ComponentOneComponent } from 'src/app/componentOne/component-one/component-one.component';
 import { ComponentTwoComponent } from 'src/app/componentTwo/component-two/component-two.component';
 import { ComponentThreeComponent } from 'src/app/componentThree/component-three/component-three.component';
-
+import { MainVComponent } from 'src/app/main-v/main-v.component';
+import { PopupComponent } from 'src/app/popup/popup.component';
 const route:Routes=[
   {path:'', component:SecondComponent, children:[
     {path:'firstComp', component: ComponentOneComponent, outlet:'tabs'},
@@ -17,7 +18,13 @@ const route:Routes=[
 ]
 
 @NgModule({
-  declarations: [SecondComponent],
+  declarations: [SecondComponent,
+    MainVComponent,
+    ComponentTwoComponent,
+    ComponentThreeComponent,
+    ComponentOneComponent,
+    PopupComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(route)
