@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { SecondComponent } from './second.component';
@@ -7,7 +8,10 @@ import { ComponentTwoComponent } from 'src/app/componentTwo/component-two/compon
 import { ComponentThreeComponent } from 'src/app/componentThree/component-three/component-three.component';
 import { MainVComponent } from 'src/app/main-v/main-v.component';
 import { PopupComponent } from 'src/app/popup/popup.component';
-import {BsModalService } from 'ngx-bootstrap/modal';
+import {BsModalService, ModalModule } from 'ngx-bootstrap/modal';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AccountsService } from 'src/app/services/accounts.service';
+import { HttpClientModule } from '@angular/common/http';
 const route:Routes=[
   {path:'', component:SecondComponent, children:[
     {path:'firstComp', component: ComponentOneComponent, outlet:'tabs'},
@@ -25,13 +29,19 @@ const route:Routes=[
     ComponentThreeComponent,
     ComponentOneComponent,
     PopupComponent,
+    
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(route),
-
+    ModalModule,
+    NgbModule,
+    HttpClientModule
   ], providers:[
-    BsModalService
+    BsModalService,
+    AccountsService
+  ], entryComponents:[
+    PopupComponent
   ]
 })
 export class SecondModule { }

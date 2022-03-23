@@ -17,10 +17,6 @@ import { PopupComponent } from './popup/popup.component';
     AppComponent,
     FirstComponent,
     HomeComponent,
-   
-    
-
-
   ],
   imports: [
     BrowserModule,
